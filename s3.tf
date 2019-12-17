@@ -10,4 +10,3 @@ resource "aws_s3_bucket" "b" {
   versioning { 
     enabled = true 
   } 
-} 
