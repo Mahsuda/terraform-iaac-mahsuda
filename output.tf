@@ -6,15 +6,15 @@ output "sec_group" {
      }
 
  output "key_name" {
-    value = aws_key_pair.deployer.key_name 
+    value = aws_key_pair.deployer.key_name
 }
 
 output "username" {
-    value = some_username 
+    value = "some_username" 
 }
 
 output "password" {
-    value = password 
+    value = "password"
 }
 
 
