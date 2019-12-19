@@ -16,6 +16,11 @@ output "username" {
 output "password" {
     value = "password"
 }
+output "wordpress_username" {
+    value = "some_username"
+}
 
+output "wordpress_paswword" {
+    value = "password"
+}
 
-    
