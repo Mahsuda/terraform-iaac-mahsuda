@@ -1,7 +1,8 @@
 resource "aws_instance" "web" {
-  count = 10
-  ami      = var.ami 
-  instance_type   = "t2.micro"
+  count = var.count
+  ami             = var.ami 
+  instance_type   = var.instance_type
+
   associate_public_ip_address = "true"
   key_name = aws_key_pair.deployer.key_name
   security_groups = ["allow_ssh"]
