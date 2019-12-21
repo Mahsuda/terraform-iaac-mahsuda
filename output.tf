@@ -27,3 +27,4 @@ output "wordpress_paswword" {
 output "IPs" {
     value = aws_instance.web.*.public_ip
      }
+
