@@ -1,6 +1,6 @@
 
 ami                                                         = "ami-00068cd7555f543d5"
-instance_type                                               = "t"
+instance_type                                               = "t2.large"
 key_name                                                    = "my-new-windows key"
 
 
