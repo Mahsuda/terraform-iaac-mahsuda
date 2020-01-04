@@ -17,6 +17,7 @@ resource "aws_iam_group" "developers" {
  group = aws_iam_group.developers.name 
 
  } 
+ 
 resource "aws_iam_policy" "policy" { 
   name = "test_policy3" 
   path = "/" 
