@@ -1,6 +1,6 @@
-ami                                                         = ""
-instance_type                                               = ""
-key_name                                                    = ""
+ami                                                         = "ami-00068cd7555f543d5"
+instance_type                                               = "t2.medium"
+key_name                                                    = "my-new-windows key"
 
 
 environment = "qa" 
