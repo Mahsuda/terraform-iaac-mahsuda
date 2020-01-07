@@ -3,6 +3,6 @@ provider "aws"{
 } 
 module "instance" { 
   source = "./module" 
-  ami = "ami-00068cd7555f543d5" 
-  instance_type = "t2.micro" 
+  ami = "ami-00068cd7555f543d5"
+  instance_type = "t2.micro"
 }
