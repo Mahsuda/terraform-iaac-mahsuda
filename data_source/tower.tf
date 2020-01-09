@@ -39,7 +39,7 @@ resource "aws_key_pair" "towerkey" {
               ]
               }
               }
-resource "aws_instance" "web" {
+resource "aws_instance" "tower" {
   ami           = "data.aws_ami.centos.id"
   instance_type = "t2.micro"
 
@@ -50,7 +50,7 @@ resource "aws_instance" "web" {
 
 resource "aws_route53_record" "tower" {
   zone_id = "Z180QC6O3SYROP"
-  name    = "tower.example.com"
+  name    = "tower"
   type    = "A"
   ttl     = "300"
   records = ["aws_instance.web.public_ip]
