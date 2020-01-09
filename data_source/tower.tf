@@ -20,27 +20,27 @@ data "aws_ami" "ubuntu" {
 
 # Show  AMI id
 output "ami" {
-    value = "${data_ami_centos_id}"
+    value = "data_ami_centos_id"
 }
 
-resource "aws_key_pair" "${towerkey}" {
-  key_name   = "${towerkey}"
-  public_key = "${file("${var.key_name_location}")}"
+resource "aws_key_pair" "towerkey" {
+  key_name   = "towerkey"
+  public_key = "file("$var.key_name_location")}"
 } 
 
  provisioner "remote-exec" {
      connection {
-          host = "${self.public_ip}"
+          host = "self.public_ip"
           type = "ssh"
-          user = "${var.user}"
-          private_key = "${file("~/.ssh/id_rsa")}"
+          user = "var.user}"
+          private_key = "file("~/.ssh/id_rsa")"
           inline = [
               "sudo yum install -y epel-release",
               ]
               }
               }
 resource "aws_instance" "web" {
-  ami           = "${data.aws_ami.centos.id}"
+  ami           = "data.aws_ami.centos.id"
   instance_type = "t2.micro"
 
   tags = {
