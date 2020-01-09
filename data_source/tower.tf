@@ -28,6 +28,12 @@ resource "aws_key_pair" "towerkey" {
   public_key = file("~/.ssh/id_rsa")
 }
 
+
+resource "aws_instance" "tower" {
+  ami           = "data.aws_ami.centos.id"
+  instance_type = "t2.micro"
+
+
  provisioner "remote-exec" {
      connection {
           host = self.public_ip
@@ -39,9 +45,6 @@ resource "aws_key_pair" "towerkey" {
               ]
               }
               }
-resource "aws_instance" "tower" {
-  ami           = "data.aws_ami.centos.id"
-  instance_type = "t2.micro"
 
   tags = {
     Name = "HelloWorld"
