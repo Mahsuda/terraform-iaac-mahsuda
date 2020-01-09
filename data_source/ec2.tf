@@ -1,4 +1,4 @@
-#Go to us-east-2 region
+#Go to us-east-1 region
 provider "aws" {
     region = "us-east-2"
 }
