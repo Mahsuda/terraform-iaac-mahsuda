@@ -1,7 +1,5 @@
 #Go to us-east-1 region
-
-
-# Search for Centos Latest with the owner
+# Search for Centos Lest with the owner
 data "aws_ami" "centos" {
      filter {
         name  = "root-device-type"
