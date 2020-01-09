@@ -1,3 +1,4 @@
+#Show
 provider "aws" {
     region = "us-east-2"
 }
@@ -7,7 +8,7 @@ data "aws_ami" "ubuntu" {
     owners = ["099720109477"]
 }
 
-# Show  owner ID 
+# Show  AMI id
 output "ami" {
     value = "${data.aws_ami.ubuntu.id}"
 }
