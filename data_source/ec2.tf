@@ -1,6 +1,6 @@
 #Go to us-east-1 region
 provider "aws" {
-    region = "us-east-2"
+    region = "us-east-1"
 }
 # Search for Ubuntu Latest with the owner
 data "aws_ami" "ubuntu" {
@@ -21,3 +21,8 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+ filter { 
+      name ="state" 
+      values = ["available"]
+      }
