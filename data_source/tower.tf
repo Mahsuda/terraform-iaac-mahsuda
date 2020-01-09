@@ -25,14 +25,14 @@ output "ami" {
 
 resource "aws_key_pair" "towerkey" {
   key_name   = "towerkey"
-  public_key = "file("$var.key_name_location")}"
-} 
+  public_key = file("~/.ssh/id_rsa")
+}
 
  provisioner "remote-exec" {
      connection {
           host = "self.public_ip"
           type = "ssh"
-          user = "var.user}"
+          user = "centos"
           private_key = "file("~/.ssh/id_rsa")"
           inline = [
               "sudo yum install -y epel-release",
