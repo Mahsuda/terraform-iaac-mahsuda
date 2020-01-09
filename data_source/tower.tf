@@ -3,14 +3,12 @@
 
 # Search for Centos Latest with the owner
 data "aws_ami" "centos" {
-    most_recent = true
-    owners = ["099720109477"]
      filter {
         name  = "root-device-type"
          values = ["ebs"]
-    most_recent =true
-    owners = [679593333241]
-         }
+    most_recent = true
+    owners = ["679593333241"]
+    }
      filter {
          name ="name"
          values = ["CentOS Linux 7 x86_64 HVM EBS *"]
