@@ -16,9 +16,7 @@ data "aws_ami" "ubuntu" {
          name ="name" 
          values = ["CentOS Linux 7 x86_64 HVM EBS *"] 
          } 
-
-
-}
+         }
 
 # Show  AMI id
 output "ami" {
@@ -31,12 +29,12 @@ resource "aws_key_pair" "${towerkey}" {
 } 
 
  provisioner "remote-exec" { 
-     connection { 
-          host = "${self.public_ip}" 
-          type = "ssh" 
-          user = "${var.user}" 
+     connection {
+          host = "${self.public_ip}"
+          type = "ssh"
+          user = "${var.user}"
           private_key = "${file("~/.ssh/id_rsa")}"
-          inline = [ 
+          inline = [
               "sudo yum install -y epel-release", 
               ]
               }
@@ -50,7 +48,7 @@ resource "aws_instance" "web" {
   }
 }
 
-esource "aws_route53_record" "tower" { 
+resource "aws_route53_record" "tower" { 
   zone_id = "Z180QC6O3SYROP" 
   name    = "tower.example.com" 
   type    = "A" 
