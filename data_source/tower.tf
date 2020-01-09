@@ -1,9 +1,8 @@
 #Go to us-east-1 region
-provider "aws" {
-    region = "us-east-1"
-}
+
+
 # Search for Centos Latest with the owner
-data "aws_ami" "ubuntu" {
+data "aws_ami" "centos" {
     most_recent = true
     owners = ["099720109477"]
      filter {
@@ -19,9 +18,7 @@ data "aws_ami" "ubuntu" {
          }
 
 # Show  AMI id
-output "ami" {
-    value = "data_ami_centos_id"
-}
+
 
 resource "aws_key_pair" "towerkey" {
   key_name   = "towerkey"
