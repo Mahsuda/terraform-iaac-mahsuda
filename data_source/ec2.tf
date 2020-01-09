@@ -1,4 +1,4 @@
-#Show
+#Go to us-east-2 region
 provider "aws" {
     region = "us-east-2"
 }
@@ -11,4 +11,13 @@ data "aws_ami" "ubuntu" {
 # Show  AMI id
 output "ami" {
     value = "${data.aws_ami.ubuntu.id}"
+}
+
+resource "aws_instance" "web" {
+  ami           = "${data.aws_ami.ubuntu.id}"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
 }
