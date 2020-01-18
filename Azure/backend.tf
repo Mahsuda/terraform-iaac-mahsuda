@@ -4,5 +4,6 @@ terraform {
     storage_account_name = "mahsudabackend"
     container_name       = "tfstate"
     key                  = "prod.terraform.state"
+    access_key           = ""
   }
 }
