@@ -91,9 +91,21 @@ resource "azurerm_network_interface" "nic1" {
 
     private_ip_address_allocation = "Dynamic" 
 
-    public_ip_address_id = "${azurerm_public_ip.IP.id}" 
+    public_ip_address_id = "${azurerm_public_ip.IP.id}"
 
   } 
+
+} 
+
+resource "azurerm_public_ip" "IP" { 
+
+  name = "public_ip" 
+
+  location = "westus2" 
+
+  resource_group_name = "${azurerm_resource_group.web_server_rg.name}" 
+
+  allocation_method = "Dynamic" 
 
 } 
 resource "azurerm_virtual_machine" "vm1" { 
